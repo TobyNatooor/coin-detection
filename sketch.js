@@ -29,7 +29,8 @@ async function init() {
     // Initialize the Image Classifier method with MobileNet passing the video as the
     // second argument and the getClassification function as the third
     console.log('Loading model');
-    let classifier = await ml5.imageClassifier("MobileNet", video);
+    const url = 'http://tobynatooor.github.io/coin-detection/coin-trained-model/model.json';
+    let classifier = await ml5.imageClassifier(url, video);
     console.log('Loading done');
     loop(classifier);
 }
